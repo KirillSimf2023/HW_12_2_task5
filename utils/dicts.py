@@ -14,7 +14,7 @@
 # 'bazaar'
 
 
-def get_val(collection, key, default='git'):
+def get_val(collection: dict, key: str, default='git'):
     """
     Функция возвращает значение из словаря по переданному ключу,
     если ключ существует.
@@ -24,5 +24,13 @@ def get_val(collection, key, default='git'):
     :param default: значение по-умолчанию.
     :return: значение из словаря по переданному ключу или значение по-умолчанию.
     """
-    pass
+
+    if len(collection) == 0:
+        return default
+
+    if key not in collection.keys():
+        return default
+
+    return collection[key]
+
 

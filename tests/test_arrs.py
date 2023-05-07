@@ -20,5 +20,6 @@ def test_get_val():
     assert dicts.get_val(data, "vcs", "test") == 'mercurial'
     assert dicts.get_val(data, "abc", "test") == 'test'
     data = {}
+    assert dicts.get_val(data, "vcs") == 'git'
     assert dicts.get_val(data, "vcs", "git") == 'git'
     assert dicts.get_val(data, "vcs", "bazaar") == 'bazaar'
